@@ -17,7 +17,7 @@ public class History_MilestoneService {
         this.historyMilestoneRepository = historyMilestoneRepository;
     }
 
-    public List<History_Milestone> getAllByMilestone() {
+    public List<History_Milestone> getAllMilestones() {
         return historyMilestoneRepository.findAll();
     }
 }
