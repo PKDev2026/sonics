@@ -1,7 +1,0 @@
-@import "tailwindcss";
-
-/* Define your Sonics colors directly in CSS variables */
-@theme {
-  --color-sonics-green: #00653A;
-  --color-sonics-gold: #FFC72C;
-}
