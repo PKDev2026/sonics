@@ -29,6 +29,7 @@ export interface Facility {
   description: string;
   amenities: string[]; // Matches the text[] from Postgres
   operatingHours: string;
+  imageUrl: string;
 }
 
 export interface Milestone {
