@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import { Facility } from '../../types';
 
 export default async function FacilitiesPage() {
   const response = await fetch('http://localhost:8080/api/facilities', { cache: 'no-store' });
   const facilities: Facility[] = await response.json();
+  console.log(facilities);
 
   return (
     <main className="min-h-screen bg-gray-50 p-8">
@@ -26,9 +28,20 @@ export default async function FacilitiesPage() {
                   ))}
                 </div>
               </div>
-              <div className="md:w-64 bg-gray-50 rounded-xl p-4 flex flex-col justify-center items-center border border-dashed border-gray-300">
-                <span className="text-xs font-bold text-gray-400 uppercase">Operating Hours</span>
-                <p className="text-sonics-green font-black text-center mt-2">{place.operatingHours}</p>
+              <div className="relative md:w-64 h-48 rounded-xl overflow-hidden border border-gray-200 bg-gray-50 group">
+                {place.imageUrl ? (
+                  <Image 
+                    src={place.imageUrl} 
+                    alt={place.name}
+                    fill 
+                    className="object-cover transition-all duration-700 ease-in-out" 
+                    sizes="(max-width: 768px) 100vw, 256px"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full text-gray-400 font-bold uppercase tracking-widest bg-gray-100">
+                    No Photo
+                  </div>
+                )}
               </div>
             </div>
           ))}
