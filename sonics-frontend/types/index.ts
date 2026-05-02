@@ -2,7 +2,7 @@
 
 export interface Player {
   id: number;
-  fullName: string;
+  firstName: string;
   lastName: string;
   number: number;
   position: string;
