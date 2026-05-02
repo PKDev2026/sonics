@@ -35,4 +35,7 @@ public class Facility {
 
     @Column(name = "operating_hours")
     private String operatingHours;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }
