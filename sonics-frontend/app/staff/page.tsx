@@ -22,7 +22,7 @@ export default async function StaffPage() {
             <tbody className="divide-y divide-gray-100">
               {staffMembers.map((member) => (
                 <tr key={member.id} className="hover:bg-gray-50 transition">
-                  <td className="p-4 font-bold">{member.firstName} {member.lastName}</td>
+                  <td className="p-4 font-bold">{member.fullName}</td>
                   <td className="p-4 text-gray-600">{member.role}</td>
                   <td className="p-4 text-sm font-semibold text-sonics-green">{member.department}</td>
                 </tr>

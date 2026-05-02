@@ -2,7 +2,7 @@
 
 export interface Player {
   id: number;
-  firstName: string;
+  fullName: string;
   lastName: string;
   number: number;
   position: string;
@@ -12,8 +12,7 @@ export interface Player {
 
 export interface Staff {
   id: number;
-  firstName: string;
-  lastName: string;
+  fullName: string;
   role: string;
   department: string;
 }
