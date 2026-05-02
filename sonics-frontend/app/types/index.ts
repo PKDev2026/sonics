@@ -36,6 +36,7 @@ export interface Milestone {
   year: number;
   event: string;
   description: string;
+  isChampionship: boolean;
 }
 
 export interface SocialMedia {
