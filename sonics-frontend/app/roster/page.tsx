@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Player } from '../../types'; // or '@/types' if the fix above is done
 
 export default async function RosterPage() {
@@ -5,6 +6,41 @@ export default async function RosterPage() {
     cache: 'no-store' 
   });
   const players: Player[] = await response.json();
+
+  if (players.length === 0) {
+    return (
+      <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8 text-center">
+        <div className="max-w-md bg-white p-10 rounded-3xl shadow-xl border-t-8 border-sonics-green">
+          {/* A fun icon or a basketball emoji */}
+          <div className="text-6xl mb-6 animate-bounce">🏀</div>
+          
+          <h1 className="text-3xl font-black text-sonics-green uppercase italic tracking-tight">
+            Scouting in <span className="text-sonics-gold">Progress</span>
+          </h1>
+          
+          <p className="text-gray-600 mt-4 leading-relaxed">
+            We are currently finalizing the roster for the upcoming season. Check back soon to see the starting lineup for the return of your Sonics!
+          </p>
+
+          <div className="mt-8 space-y-4">
+            <Link 
+              href="/" 
+              className="block w-full py-3 border-2 border-sonics-green text-sonics-green font-bold rounded-lg hover:bg-gray-50 transition"
+            >
+              Return to Dashboard
+            </Link>
+            
+            <Link 
+              href="/staff" 
+              className="block w-full py-3 border-2 border-sonics-green text-sonics-green font-bold rounded-lg hover:bg-gray-50 transition"
+            >
+              View Team Staff
+            </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-gray-50 p-8">
