@@ -32,7 +32,7 @@ export default async function StaffPage() {
     <main className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-black text-sonics-green mb-10 italic uppercase">
-          Front <span className="text-sonics-gold">Office</span>
+          Team <span className="text-sonics-gold">Staff</span>
         </h1>
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           <table className="w-full text-left">
