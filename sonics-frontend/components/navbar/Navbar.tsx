@@ -8,10 +8,11 @@ export default function Navbar() {
           SEATTLE <span className="text-sonicsGold">SUPERSONICS</span>
         </Link>
         <div className="space-x-6 font-medium">
-          <Link href="/stadium" className="hover:text-sonicsGold transition">Stadium</Link>
+          <Link href="/staff" className="hover:text-sonicsGold transition">Staff</Link>
+          <Link href="/facility" className="hover:text-sonicsGold transition">Facility</Link>
           <Link href="/roster" className="hover:text-sonicsGold transition">Roster</Link>
           <Link href="/history" className="hover:text-sonicsGold transition">History</Link>
-          <Link href="/bellevue" className="hover:text-sonicsGold transition">Bellevue Compound</Link>
+          <Link href="/social_media" className="hover:text-sonicsGold transition">Social Media</Link>
         </div>
       </div>
     </nav>
