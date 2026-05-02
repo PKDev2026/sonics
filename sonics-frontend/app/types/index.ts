@@ -12,9 +12,11 @@ export interface Player {
 
 export interface Staff {
   id: number;
-  fullName: string;
+  name: string;
   role: string;
   department: string;
+  bio: string;
+  url: string;
 }
 
 export interface Facility {
