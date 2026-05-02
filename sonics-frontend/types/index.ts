@@ -37,6 +37,7 @@ export interface Milestone {
   event: string;
   description: string;
   isChampionship: boolean;
+  imageUrl: string;
 }
 
 export interface SocialMedia {
