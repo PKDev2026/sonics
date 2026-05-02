@@ -24,4 +24,7 @@ public class History_Milestone {
 
     @Column(name = "is_championship", columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean championship;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }
