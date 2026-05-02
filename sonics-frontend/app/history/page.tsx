@@ -41,7 +41,7 @@ export default async function HistoryPage() {
               className="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
               {/* Image Section */}
-              <div className="md:w-1/3 h-64 md:h-auto relative overflow-hidden bg-gray-200">
+              <div className="md:w-1/3 h-64 relative overflow-hidden bg-gray-200">
                 {item.imageUrl ? (
                   <Image 
                     src={item.imageUrl} 
