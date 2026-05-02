@@ -8,6 +8,8 @@ export interface Player {
   position: string;
   height: string;
   weight: string;
+  experience: string;
+  url: string;
 }
 
 export interface Staff {
