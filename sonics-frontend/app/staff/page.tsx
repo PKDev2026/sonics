@@ -1,4 +1,4 @@
-import { Staff } from '../types';
+import { Staff } from '../../types';
 import Link from 'next/link'; // 1. Always import the Link component
 
 export default async function StaffPage() {

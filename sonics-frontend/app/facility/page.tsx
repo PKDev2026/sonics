@@ -1,4 +1,4 @@
-import { Facility } from '../types';
+import { Facility } from '../../types';
 
 export default async function FacilitiesPage() {
   const response = await fetch('http://localhost:8080/api/facilities', { cache: 'no-store' });

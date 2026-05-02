@@ -1,4 +1,4 @@
-import { Milestone } from '../types/index'
+import { Milestone } from '../../types/index'
 
 export default async function HistoryPage() {
 

@@ -1,4 +1,4 @@
-import { Player } from '../types'; // or '@/types' if the fix above is done
+import { Player } from '../../types'; // or '@/types' if the fix above is done
 
 export default async function RosterPage() {
   const response = await fetch('http://localhost:8080/api/player', { 
