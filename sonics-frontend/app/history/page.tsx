@@ -22,6 +22,7 @@ export default async function HistoryPage() {
   const data = await response.json();
   // 2. Ensure data is an array before mapping
   const milestones: Milestone[] = Array.isArray(data) ? data : [];
+  console.log(milestones);
 
   return (
     <main className="min-h-screen bg-gray-50 p-8">
