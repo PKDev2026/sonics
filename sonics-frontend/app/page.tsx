@@ -1,17 +1,28 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-6">
-      <div className="text-center">
-        <h1 className="text-6xl font-black text-sonics-green italic">
-          SONICS <span className="text-sonics-gold">CENTRAL</span>
-        </h1>
-        <p className="mt-4 text-xl text-gray-700">
-          Welcome to the digital headquarters of the Seattle Supersonics.
-        </p>
-        <div className="mt-8 flex gap-4 justify-center">
-          <div className="p-4 border-2 border-sonics-green rounded-lg">
-            <p className="font-bold text-sonics-green">MVP VERSION 1.0</p>
+    <main className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-green-950">
+      <div className="absolute inset-0 z-0 bg-green-950">
+        <div 
+          className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] rounded-full opacity-40 blur-[120px]"
+          style={{ backgroundColor: '#00653a' }} 
+        />
+        <div 
+          className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full opacity-20 blur-[120px]"
+          style={{ backgroundColor: '#ffc200' }} 
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,101,58,0.15)_0%,transparent_70%)]" />
+      </div>
+      <div className="relative z-10 w-full max-w-4xl mx-4 p-8 md:p-16 rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl">
+        <div className="text-center mb-12">
+          <div className="inline-block px-4 py-1 mb-6 rounded-full border border-sonics-gold/30 bg-sonics-gold/10 text-sonics-gold text-xs font-bold tracking-widest uppercase">
+            Seattle, Washington
           </div>
+          <h1 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter">
+            SONICS <span className="text-sonics-gold">CENTRAL</span>
+          </h1>
+          <p className="mt-4 text-gray-300 text-lg md:text-xl max-w-xl mx-auto">
+            The digital headquarters for the next era of SuperSonics basketball.
+          </p>
         </div>
       </div>
     </main>
