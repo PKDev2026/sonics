@@ -29,8 +29,7 @@ export default async function HistoryPage() {
         <header className="mb-24 relative">
           <div className="absolute -left-10 top-0 w-2 h-full bg-sonics-gold hidden md:block" />
           <h1 className="text-7xl md:text-9xl font-black text-sonics-green italic uppercase tracking-tighter leading-none">
-            THE <br />
-            <span className="text-sonics-gold drop-shadow-[4px_4px_0px_rgba(0,101,58,1)]">TIMELINE</span>
+            THE <span className="text-sonics-gold drop-shadow-[4px_4px_0px_rgba(0,101,58,1)]">TIMELINE</span>
           </h1>
           <p className="mt-6 text-xl font-bold text-gray-500 uppercase tracking-widest italic">
             Decades of dominance in the 206
