@@ -10,7 +10,7 @@ export default function Home() {
         </p>
         <div className="mt-8 flex gap-4 justify-center">
           <div className="p-4 border-2 border-sonics-green rounded-lg">
-            <p className="font-bold text-sonics-green">MVP VERSION 1.0</p>
+            <p className="font-bold text-sonics-green">VERSION 2.0</p>
           </div>
         </div>
       </div>
