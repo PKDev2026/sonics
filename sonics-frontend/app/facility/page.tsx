@@ -7,7 +7,7 @@ export default async function FacilitiesPage() {
   console.log(facilities);
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
+    <main className=" bg-gray-50 p-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-black text-sonics-green mb-10 italic uppercase">
           The <span className="text-sonics-gold">Compound</span>

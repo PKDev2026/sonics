@@ -5,7 +5,7 @@ export default async function SocialPage() {
   const links: SocialMedia[] = await response.json();
 
   return (
-    <main className="min-h-screen bg-sonics-green p-8 flex items-center justify-center">
+    <main className="bg-sonics-green p-8 flex h-full items-center justify-center">
       <div className="max-w-2xl w-full">
         <h1 className="text-4xl font-black text-white mb-10 text-center italic uppercase">
           Follow <span className="text-sonics-gold">The Boom</span>

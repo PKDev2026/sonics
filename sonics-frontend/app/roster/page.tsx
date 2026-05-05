@@ -9,19 +9,15 @@ export default async function RosterPage() {
 
   if (players.length === 0) {
     return (
-      <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8 text-center">
+      <main className="bg-gray-50 flex flex-col h-full items-center justify-center p-8 text-center">
         <div className="max-w-md bg-white p-10 rounded-3xl shadow-xl border-t-8 border-sonics-green">
-          {/* A fun icon or a basketball emoji */}
           <div className="text-6xl mb-6 animate-bounce">🏀</div>
-          
           <h1 className="text-3xl font-black text-sonics-green uppercase italic tracking-tight">
             Scouting in <span className="text-sonics-gold">Progress</span>
           </h1>
-          
           <p className="text-gray-600 mt-4 leading-relaxed">
             We are currently finalizing the roster for the upcoming season. Check back soon to see the starting lineup for the return of your Sonics!
           </p>
-
           <div className="mt-8 space-y-4">
             <Link 
               href="/" 
@@ -29,7 +25,6 @@ export default async function RosterPage() {
             >
               Return to Dashboard
             </Link>
-            
             <Link 
               href="/staff" 
               className="block w-full py-3 border-2 border-sonics-green text-sonics-green font-bold rounded-lg hover:bg-gray-50 transition"
@@ -43,7 +38,7 @@ export default async function RosterPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
+    <main className="bg-gray-50 p-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-black text-sonics-green mb-10 italic uppercase">
           Active <span className="text-sonics-gold">Roster</span>

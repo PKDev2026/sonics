@@ -8,15 +8,13 @@ export default async function StaffPage() {
 
   if (!staffMembers || staffMembers.length === 0) {
     return (
-      <main className="min-h-screen bg-gray-50 p-8 flex flex-col items-center justify-center">
+      <main className="bg-gray-50 p-8 flex flex-col items-center justify-center">
         <div className="text-center p-12 bg-white rounded-2xl shadow-sm border border-gray-200">
           <div className="text-6xl mb-4">📋</div>
           <h2 className="text-2xl font-bold text-gray-800">No Staff Found</h2>
           <p className="text-gray-500 mt-2">
             The front office directory is currently being updated.
           </p>
-          
-          {/* 2. Replace <a> with <Link> */}
           <Link 
             href="/" 
             className="mt-6 inline-block text-sonics-green font-bold hover:underline"
@@ -29,7 +27,7 @@ export default async function StaffPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
+    <main className="bg-gray-50 p-8">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-black text-sonics-green mb-10 italic uppercase">
           Team <span className="text-sonics-gold">Staff</span>

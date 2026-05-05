@@ -10,7 +10,7 @@ export default async function HistoryPage() {
   // 1. Safety check for the 404 or Server Errors
   if (!response.ok) {
     return (
-      <main className="min-h-screen bg-gray-50 p-8 flex items-center justify-center">
+      <main className=" bg-gray-50 p-8 flex items-center justify-center">
         <div className="text-center bg-white p-8 rounded-xl shadow-md border border-red-200">
           <h1 className="text-2xl font-bold text-red-600">Connection Error</h1>
           <p className="text-gray-600 mt-2">Could not reach the Sonics API (Status: {response.status})</p>
@@ -25,7 +25,7 @@ export default async function HistoryPage() {
   console.log(milestones);
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
+    <main className=" bg-gray-50 p-8">
       <div className="max-w-5xl mx-auto">
         <header className="mb-12">
           <h1 className="text-5xl font-black text-sonics-green italic uppercase tracking-tighter">
