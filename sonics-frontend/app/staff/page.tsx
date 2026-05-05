@@ -1,59 +1,81 @@
 import { Staff } from '../../types';
-import Link from 'next/link'; // 1. Always import the Link component
 
 export default async function StaffPage() {
-  const response = await fetch('http://localhost:8080/api/staff', { cache: 'no-store' });
+  const response = await fetch('http://localhost:8080/api/staff', { 
+    cache: 'no-store' 
+  });
   const staffMembers: Staff[] = await response.json();
-  console.log("STAFF DATA:", staffMembers);
-
-  if (!staffMembers || staffMembers.length === 0) {
-    return (
-      <main className="bg-gray-50 p-8 flex flex-col items-center justify-center">
-        <div className="text-center p-12 bg-white rounded-2xl shadow-sm border border-gray-200">
-          <div className="text-6xl mb-4">📋</div>
-          <h2 className="text-2xl font-bold text-gray-800">No Staff Found</h2>
-          <p className="text-gray-500 mt-2">
-            The front office directory is currently being updated.
-          </p>
-          <Link 
-            href="/" 
-            className="mt-6 inline-block text-sonics-green font-bold hover:underline"
-          >
-            ← Back to Dashboard
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  const departments = {
+    "Ownership": staffMembers.filter(s => s.department === "Ownership"),
+    "Basketball Operations": staffMembers.filter(s => s.department === "Basketball Operations"),
+    "Business Operations": staffMembers.filter(s => s.department === "Business Operations")
+  };
 
   return (
-    <main className="bg-gray-50 p-8">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-black text-sonics-green mb-10 italic uppercase">
-          Team <span className="text-sonics-gold">Staff</span>
-        </h1>
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          <table className="w-full text-left">
-            <thead className="bg-sonics-green text-white uppercase text-sm">
-              <tr>
-                <th className="p-4">Name</th>
-                <th className="p-4">Role</th>
-                <th className="p-4">Department</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {staffMembers.map((member) => (
-                <tr key={member.id} className="hover:bg-gray-50 transition">
-                  <td className="p-4 font-bold">{member.name}</td>
-                  <td className="p-4 text-gray-600">{member.role}</td>
-                  <td className="p-4 text-sm font-semibold text-sonics-green">
-                    {member.department}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+    <main className="relative min-h-screen bg-gray-50 p-6 lg:p-20 overflow-x-hidden">
+      <div className="fixed inset-0 flex flex-col justify-center items-center pointer-events-none select-none opacity-[0.02]">
+        <div className="text-[20vw] font-black text-sonics-green italic uppercase leading-none">OFFICE</div>
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <header className="mb-24">
+          <h1 className="text-7xl md:text-9xl font-black text-sonics-green italic uppercase tracking-tighter leading-none">
+            FRONT <span className="text-sonics-gold drop-shadow-[4px_4px_0px_rgba(0,101,58,1)]">OFFICE</span>
+          </h1>
+        </header>
+        {(Object.entries(departments) as [keyof typeof departments, Staff[]][]).map(([deptName, members]) => {
+          if (members.length === 0)
+          {
+            return null;
+          }
+
+          return (
+            <section key={deptName} className="mb-32">
+              <div className="flex items-end gap-4 mb-12 border-b-8 border-sonics-green pb-4">
+                <h2 className="text-4xl md:text-5xl font-black text-sonics-green uppercase italic tracking-tighter">
+                  {deptName}
+                </h2>
+                <span className="text-sonics-gold font-black mb-1">- {members.length} MEMBERS</span>
+              </div>
+              <div className={`grid gap-8 ${
+                deptName === "Ownership" 
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              }`}>
+                {members.map((member) => (
+                  <div key={member.id} className="group relative">
+                    <div className={`relative bg-white border-4 border-sonics-green p-8 transition-all 
+                      ${deptName === "Ownership" 
+                        ? "shadow-[16px_16px_0px_0px_#ffc200] border-t-16"
+                        : "shadow-[10px_10px_0px_0px_#00653a] hover:shadow-[10px_10px_0px_0px_#ffc200]"
+                      }`}>
+                      <div className="flex flex-col h-full">
+                        <span className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">
+                          {member.role}
+                        </span>
+                        <h3 className={`font-black text-sonics-green italic uppercase leading-none tracking-tighter mb-4
+                          ${deptName === "Ownership" ? "text-5xl" : "text-3xl"}`}>
+                          {member.name}
+                        </h3>
+                        <div className="mt-auto pt-6 flex justify-between items-center border-t border-gray-100">
+                          <span className="text-[10px] font-bold text-gray-400 uppercase">Employee Verified</span>
+                          <div className="flex gap-1">
+                            <div className="w-1 h-3 bg-sonics-gold" />
+                            <div className="w-4 h-3 bg-sonics-green" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+        <footer className="mt-20 py-10 border-t-4 border-dashed border-gray-200 text-center">
+          <p className="text-sonics-green font-black italic tracking-[0.3em] uppercase text-sm">
+            Confidential Roster // Seattle Supersonics HQ
+          </p>
+        </footer>
       </div>
     </main>
   );
