@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Player } from '../../types'; // or '@/types' if the fix above is done
+import { Player } from '../../types';
 
 export default async function RosterPage() {
   const response = await fetch('http://localhost:8080/api/player', { 
@@ -9,27 +9,21 @@ export default async function RosterPage() {
 
   if (players.length === 0) {
     return (
-      <main className="bg-gray-50 flex flex-col h-full items-center justify-center p-8 text-center">
-        <div className="max-w-md bg-white p-10 rounded-3xl shadow-xl border-t-8 border-sonics-green">
-          <div className="text-6xl mb-6 animate-bounce">🏀</div>
-          <h1 className="text-3xl font-black text-sonics-green uppercase italic tracking-tight">
-            Scouting in <span className="text-sonics-gold">Progress</span>
+      <main className="relative flex h-full items-center justify-center bg-gray-50 overflow-hidden p-6">
+        <div className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none select-none opacity-[0.03]">
+          <div className="text-[20vw] font-black text-sonics-green italic uppercase leading-none">SCOUTING</div>
+        </div>
+        <div className="relative z-10 text-center border-10 border-sonics-green p-12 bg-white shadow-[20px_20px_0px_0px_#ffc200]">
+          <div className="text-6xl mb-4">🏀</div>
+          <h1 className="text-5xl font-black text-sonics-green uppercase italic tracking-tighter">
+            ROSTER <span className="text-sonics-gold">PENDING</span>
           </h1>
-          <p className="text-gray-600 mt-4 leading-relaxed">
-            We are currently finalizing the roster for the upcoming season. Check back soon to see the starting lineup for the return of your Sonics!
+          <p className="text-gray-500 mt-4 max-w-sm font-bold uppercase tracking-tight">
+            The front office is finalizing the rotation. Check back soon for the official roster.
           </p>
-          <div className="mt-8 space-y-4">
-            <Link 
-              href="/" 
-              className="block w-full py-3 border-2 border-sonics-green text-sonics-green font-bold rounded-lg hover:bg-gray-50 transition"
-            >
-              Return to Dashboard
-            </Link>
-            <Link 
-              href="/staff" 
-              className="block w-full py-3 border-2 border-sonics-green text-sonics-green font-bold rounded-lg hover:bg-gray-50 transition"
-            >
-              View Team Staff
+          <div className="mt-8 flex gap-4 justify-center">
+            <Link href="/" className="px-6 py-3 border-4 border-sonics-green text-sonics-green font-black italic hover:bg-sonics-green hover:text-white transition-all uppercase">
+              Dashboard
             </Link>
           </div>
         </div>
@@ -38,31 +32,51 @@ export default async function RosterPage() {
   }
 
   return (
-    <main className="bg-gray-50 p-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-black text-sonics-green mb-10 italic uppercase">
-          Active <span className="text-sonics-gold">Roster</span>
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <main className="relative min-h-screen bg-gray-50 p-8 lg:p-16">
+      <div className="fixed inset-0 flex flex-col justify-center items-center pointer-events-none select-none opacity-[0.02] -rotate-12">
+        <div className="text-[25vw] font-black text-sonics-green italic uppercase leading-none">EMERALD</div>
+        <div className="text-[25vw] font-black text-sonics-green italic uppercase leading-none">CITY</div>
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="mb-16 border-l-12 border-sonics-gold pl-6">
+          <h1 className="text-7xl md:text-8xl font-black text-sonics-green italic uppercase tracking-tighter leading-none">
+            ACTIVE <br />
+            <span className="text-sonics-gold drop-shadow-[4px_4px_0px_rgba(0,101,58,1)]">ROSTER</span>
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
           {players.map((player) => (
-            <div key={player.id} className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
-              <div className="bg-sonics-green p-4 flex justify-between items-center">
-                <span className="text-sonics-gold text-2xl font-black">#{player.number}</span>
-                <span className="text-white font-bold uppercase tracking-widest">{player.position}</span>
+            <div 
+              key={player.id} 
+              className="group relative bg-white border-4 border-sonics-green p-0 transition-all hover:-translate-y-2 hover:shadow-[16px_16px_0px_0px_#00653a]"
+            >
+              <div className="absolute top-2 right-4 text-8xl font-black text-gray-100 italic group-hover:text-sonics-gold/20 transition-colors">
+                {player.number}
               </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800">
-                  {player.firstName} {player.lastName}
-                </h2>
-                <div className="mt-4 flex gap-4 text-sm text-gray-500 font-medium">
-                  <div className="flex flex-col">
-                    <span>HEIGHT</span>
-                    <span className="text-gray-900">{player.height}</span>
+              <div className="relative z-10">
+                <div className="p-8 border-b-4 border-sonics-green">
+                  <span className="bg-sonics-gold text-sonics-green px-3 py-1 text-xs font-black uppercase italic border-2 border-sonics-green mb-4 inline-block">
+                    {player.position}
+                  </span>
+                  <h2 className="text-4xl font-black text-sonics-green italic uppercase leading-tight tracking-tighter">
+                    {player.firstName} <br />
+                    {player.lastName}
+                  </h2>
+                </div>
+                <div className="grid grid-cols-2 divide-x-4 divide-sonics-green">
+                  <div className="p-6 bg-sonics-green/5 flex flex-col items-center">
+                    <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Height</span>
+                    <span className="text-2xl font-black text-sonics-green italic">{player.height}</span>
                   </div>
-                  <div className="flex flex-col border-l pl-4">
-                    <span>WEIGHT</span>
-                    <span className="text-gray-900">{player.weight} lbs</span>
+                  <div className="p-6 bg-sonics-green/5 flex flex-col items-center">
+                    <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Weight</span>
+                    <span className="text-2xl font-black text-sonics-green italic">{player.weight} <span className="text-xs">LBS</span></span>
+                  </div>
+                </div>
+                <div className="bg-sonics-green p-4 flex justify-between items-center group-hover:bg-black transition-colors">
+                  <span className="text-sonics-gold font-black italic tracking-widest text-sm">SONICS 2.0</span>
+                  <div className="h-6 w-12 bg-sonics-gold/30 rounded-sm overflow-hidden flex items-center justify-center">
+                     <div className="w-full h-1 bg-sonics-gold/50" />
                   </div>
                 </div>
               </div>
