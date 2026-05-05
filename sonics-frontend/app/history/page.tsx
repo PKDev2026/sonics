@@ -7,7 +7,6 @@ export default async function HistoryPage() {
     cache: 'no-store' 
   });
 
-  // 1. Safety check for the 404 or Server Errors
   if (!response.ok) {
     return (
       <main className=" bg-gray-50 p-8 flex items-center justify-center">
@@ -20,7 +19,6 @@ export default async function HistoryPage() {
   }
 
   const data = await response.json();
-  // 2. Ensure data is an array before mapping
   const milestones: Milestone[] = Array.isArray(data) ? data : [];
   console.log(milestones);
 
@@ -33,14 +31,12 @@ export default async function HistoryPage() {
           </h1>
           <div className="h-2 w-24 bg-sonics-gold mt-2"></div>
         </header>
-
         <div className="space-y-12">
           {milestones.map((item: Milestone) => (
             <div 
               key={item.id} 
               className="flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
-              {/* Image Section */}
               <div className="md:w-1/3 h-64 relative overflow-hidden bg-gray-200">
                 {item.imageUrl ? (
                   <Image 
@@ -62,8 +58,6 @@ export default async function HistoryPage() {
                   </div>
                 )}
               </div>
-
-              {/* Text Section */}
               <div className="p-8 md:w-2/3 flex flex-col justify-center border-l border-gray-100">
                 <span className="text-sonics-green font-black text-4xl tracking-tighter opacity-80">
                   {item.year}
