@@ -13,7 +13,7 @@ export default function TicketRegistry() {
     const [confirmationId] = useState( () => `SONICS-2026-REG-${Math.floor(1000 + Math.random() * 9000)}` );
 
     return (
-        <main className="relative min-h-screen bg-gray-50 p-4 lg:p-8 flex items-center justify-center overflow-hidden">
+        <main className="relative h-full bg-gray-50 p-4 lg:p-8 flex items-center justify-center overflow-hidden">
             <div className="fixed inset-0 flex flex-col justify-center items-center pointer-events-none select-none opacity-[0.02] -rotate-6">
                 <div className="text-[18vw] font-black text-sonics-green italic uppercase leading-none">RESERVE</div>
                 <div className="text-[18vw] font-black text-sonics-green italic uppercase leading-none">PRIORITY</div>
