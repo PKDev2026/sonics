@@ -14,6 +14,14 @@ export default function Navbar() {
           <Link href="/roster" className="hover:text-sonics-gold transition">Roster</Link>
           <Link href="/history" className="hover:text-sonics-gold transition">History</Link>
           <Link href="/social_media" className="hover:text-sonics-gold transition">Social Media</Link>
+          <Link 
+            href="/registry"
+            className="bg-sonics-gold border-2 border-sonics-green px-4 py-2 text-xs md:text-sm font-black 
+            stext-sonics-green uppercase italic hover:bg-sonics-green hover:text-white transition-all 
+            shadow-[4px_4px_0px_0px_#00653a] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
+          >
+            Join Waitlist
+          </Link>
         </div>
       </div>
     </nav>

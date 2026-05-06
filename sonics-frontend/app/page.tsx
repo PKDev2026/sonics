@@ -17,7 +17,7 @@ export default function Home() {
             <span className="text-sonics-gold drop-shadow-[4px_4px_0px_rgba(0,101,58,1)]">CENTRAL</span>
           </h1>
           <p className="mt-8 text-xl md:text-2xl text-gray-600 max-w-lg mx-auto font-bold uppercase tracking-tight">
-            Digital Headquarters: Version 2.0
+            Digital Headquarters: Version 2.1
           </p>
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-sonics-green text-white font-black italic hover:bg-black transition-colors rounded-none uppercase tracking-widest">
