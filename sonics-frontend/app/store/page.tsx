@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { TeamStoreProduct } from '../../types/index';
 
 export default async function StorePage() {
-  const response = await fetch('http://localhost:8080/api/team_store', { cache: 'no-store' });
+  const response = await fetch('http://localhost:8080/api/store', { cache: 'no-store' });
   const products: TeamStoreProduct[] = await response.json();
   const categories = Array.from(new Set(products.map(p => p.category)));
 
