@@ -56,7 +56,7 @@ export interface TeamStoreProduct {
   category: string;
   price: number;
   description: string;
-  url: string;
+  imageUrl: string;
   status: string;
   created_at: Timestamp;
 }
