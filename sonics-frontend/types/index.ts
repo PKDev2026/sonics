@@ -1,5 +1,7 @@
 // types/index.ts
 
+import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
+
 export interface Player {
   id: number;
   firstName: string;
@@ -46,4 +48,15 @@ export interface SocialMedia {
   platform: string;
   handle: string;
   url: string;
+}
+
+export interface TeamStoreProduct {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  description: string;
+  url: string;
+  status: string;
+  created_at: Timestamp;
 }
