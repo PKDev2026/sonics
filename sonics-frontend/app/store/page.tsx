@@ -40,8 +40,8 @@ export default async function StorePage() {
                             <Image 
                                 src={product.imageUrl} 
                                 alt={product.productName}
-                                fill 
-                                className="object-contain p-8 group-hover:scale-110 transition-transform duration-700"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 sizes="(max-width: 768px) 100vw, 33vw"
                             />
                             ) : (
