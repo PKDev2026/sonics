@@ -52,11 +52,11 @@ export interface SocialMedia {
 
 export interface TeamStoreProduct {
   id: number;
-  name: string;
-  category: string;
+  productName: string;
+  productCategory: string;
   price: number;
   description: string;
   imageUrl: string;
-  status: string;
+  productStockStatus: string;
   created_at: Timestamp;
 }

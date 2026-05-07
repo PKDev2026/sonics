@@ -39,7 +39,7 @@ export default async function StorePage() {
                         {product.imageUrl ? (
                             <Image 
                                 src={product.imageUrl} 
-                                alt={product.name}
+                                alt={product.productName}
                                 fill 
                                 className="object-contain p-8 group-hover:scale-110 transition-transform duration-700"
                                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -50,17 +50,17 @@ export default async function StorePage() {
                             </div>
                         )}
                         <div className={`absolute top-4 right-4 px-3 py-1 font-black italic uppercase text-[10px] border-2 rotate-12 ${
-                            product.status === 'In Stock' 
+                            product.productStockStatus === 'In Stock' 
                                 ? 'bg-sonics-green text-white border-white' 
                                 : 'bg-sonics-gold text-sonics-green border-sonics-green'
                         }`}>
-                            {product.status}
+                            {product.productStockStatus}
                         </div>
                     </div>
                 <div className="mt-6 flex flex-col gap-2">
                     <div className="flex justify-between items-start">
                         <h2 className="text-2xl font-black text-sonics-green uppercase italic tracking-tighter leading-none">
-                            {product.name}
+                            {product.productName}
                         </h2>
                         <span className="text-xl font-black text-sonics-green bg-sonics-gold px-2 italic">
                             ${product.price}
@@ -80,9 +80,9 @@ export default async function StorePage() {
             ))}
             </div>
             <footer className="mt-32 border-t-4 border-sonics-green pt-10 text-center">
-            <p className="text-xs font-black text-gray-300 uppercase tracking-[0.5em]">
-                Official Merchandising Division
-            </p>
+                <p className="text-xs font-black text-gray-300 uppercase tracking-[0.5em]">
+                    Official Merchandising Division
+                </p>
             </footer>
         </div>
     </main>
