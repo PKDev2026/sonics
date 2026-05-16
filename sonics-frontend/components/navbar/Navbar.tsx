@@ -13,6 +13,7 @@ export default function Navbar() {
           <Link href="/facility" className="hover:text-sonics-gold transition">Facility</Link>
           <Link href="/roster" className="hover:text-sonics-gold transition">Roster</Link>
           <Link href="/history" className="hover:text-sonics-gold transition">History</Link>
+          <Link href="/store" className="hover:text-sonics-gold transition">Store</Link>
           <Link href="/social_media" className="hover:text-sonics-gold transition">Social Media</Link>
           <Link 
             href="/registry"
